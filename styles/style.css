@@ -1,0 +1,223 @@
+/* Tema PicPay sobre o Bootstrap */
+:root {
+    --verde: #21c25e;
+    --verde-escuro: #0d8a3e;
+    --preto: #0b110e;
+    --fundo: #f2f5f3;
+    --tinta: #11181c;
+
+    --bs-body-font-family: "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+    --bs-body-color: var(--tinta);
+    --bs-body-bg: var(--fundo);
+    --bs-link-color-rgb: 13, 138, 62;
+    --bs-link-hover-color-rgb: 11, 17, 14;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+/* ===== Cabeçalho (preto com título verde) ===== */
+.topo { background: var(--preto); color: #fff; padding-block: 44px !important; }
+.topo h1 { color: var(--verde); font-size: clamp(1.8rem, 5vw, 2.8rem); letter-spacing: -.5px; }
+.topo p { color: #c9d3cd; }
+
+/* ===== Menu ===== */
+.menu {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--verde);
+}
+.menu a {
+    color: var(--preto);
+    font-weight: 600;
+    font-size: .9rem;
+    text-decoration: none;
+    padding: 4px 12px;
+    border-radius: 999px;
+}
+.menu a:hover { background: var(--preto); color: var(--verde); }
+
+/* ===== Cartões ===== */
+.cartao {
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    border: 1px solid #e3e9e5;
+}
+.cartao-link {
+    color: inherit;
+    text-decoration: none;
+    transition: border-color .15s;
+}
+.cartao-link:hover { border-color: var(--verde); color: inherit; }
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+h2::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: var(--verde);
+}
+
+/* ===== Botão ===== */
+.botao-verde {
+    display: inline-block;
+    background: var(--verde);
+    color: var(--preto);
+    font-weight: 700;
+    font-size: .85rem;
+    padding: 6px 16px;
+    border-radius: 999px;
+}
+
+/* ===== Galerias (CSS Grid) ===== */
+.galeria { display: grid; gap: 12px; }
+.fotos { grid-template-columns: repeat(3, 1fr); }
+.lugares { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.livros { grid-template-columns: repeat(3, 1fr); }
+
+.galeria img { display: block; max-width: 100%; border-radius: 12px; }
+.fotos img, .lugares img { width: 100%; height: 170px; object-fit: cover; }
+.livros img { width: 100%; aspect-ratio: 2 / 3; object-fit: cover; }
+
+.galeria figure { margin: 0; }
+.galeria figcaption { margin-top: 6px; font-size: .9rem; font-weight: 600; }
+.galeria a { text-decoration: none; }
+
+/* ===== Listas ===== */
+.lista { list-style: none; padding: 0; margin: 0; }
+.lista li {
+    padding: 10px 0 10px 16px;
+    border-left: 3px solid var(--verde);
+    margin-bottom: 10px;
+    background: #f6faf7;
+    border-radius: 0 10px 10px 0;
+}
+
+/* ===== Home ===== */
+.integrantes img {
+    width: 96px;
+    height: 96px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--verde);
+}
+
+/* ===== Rodapé ===== */
+footer { background: var(--preto); }
+footer a { color: var(--verde); font-weight: 600; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+@media (max-width: 500px) {
+    .fotos, .livros { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== Mural de favoritos (moldura + personagens recortados) ===== */
+.mural {
+    position: relative;
+    min-height: 600px;
+    border-radius: 24px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 25% 20%, #5af096 0, transparent 50%),
+        radial-gradient(circle at 80% 85%, #12a04a 0, transparent 50%),
+        var(--verde);
+}
+
+.mural-centro {
+    position: absolute;
+    inset: 14% 22%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border: 12px solid var(--preto);
+    border-radius: 32px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .35);
+}
+.mural-centro h2 { margin-bottom: 8px; font-size: 1.6rem; }
+.mural-centro h2::before { display: none; }
+.mural-centro p { margin: 0; color: #444; }
+
+/* adesivo: contorno branco + sombra */
+.pers {
+    position: absolute;
+    z-index: 2;
+    width: auto;
+    filter:
+        drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff)
+        drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff)
+        drop-shadow(0 6px 6px rgba(0, 0, 0, .35));
+    transition: transform .2s;
+}
+.pers:hover { transform: scale(1.08) rotate(-3deg); z-index: 3; }
+
+.p-percy   { left: 7%;  top: 2%;     height: 46%; }
+.p-curry30 { left: 14%; top: 36%;    height: 30%; transform: rotate(-6deg); }
+.p-freddy  { left: 4%;  top: 50%;    height: 32%; }
+.p-psyduck { left: 12%; bottom: 1%;  height: 24%; }
+.p-lebron  { left: 30%; top: 2%;     height: 19%; transform: rotate(-5deg); }
+.p-foxy    { right: 28%; top: 1%;    height: 22%; }
+.p-stephen { right: 8%; top: 3%;     height: 40%; }
+.p-buttler { right: 6%; top: 40%;    height: 36%; }
+.p-blastoise { right: 14%; bottom: 1%; height: 25%; }
+.p-greg    { left: 33%; bottom: -9%; height: 48%; filter: none; mix-blend-mode: multiply; }
+.p-worm    { right: 32%; bottom: 0;  height: 24%; }
+
+.mural-centro img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--verde);
+    margin-bottom: 10px;
+}
+@media (max-width: 800px) {
+    .mural {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 8px;
+        padding: 16px;
+        min-height: 0;
+    }
+    .mural-centro { position: static; width: 100%; flex: 0 0 100%; min-height: 160px; }
+    .pers { position: static; height: 110px; transform: none; }
+}
+
+/* Home: foto como link dentro da moldura e extra no centro inferior */
+.mural-foto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+}
+.mural-centro .mural-foto img {
+    width: 130px;
+    height: 130px;
+    margin-bottom: 8px;
+    transition: transform .2s, box-shadow .2s;
+}
+.mural-foto:hover img { transform: scale(1.06); box-shadow: 0 0 0 4px var(--verde); }
+.mural-foto span {
+    background: var(--verde);
+    color: var(--preto);
+    font-weight: 700;
+    font-size: .9rem;
+    padding: 6px 16px;
+    border-radius: 999px;
+}
+.p-greninja { left: 36%; bottom: -4%; height: 25%; }
