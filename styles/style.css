@@ -164,15 +164,15 @@ footer a:hover { text-decoration: underline; }
 .pers:hover { transform: scale(1.08) rotate(-3deg); z-index: 3; }
 
 .p-percy   { left: 7%;  top: 2%;     height: 46%; }
-.p-curry30 { left: 14%; top: 36%;    height: 30%; transform: rotate(-6deg); }
+.p-curry30 { left: 14%; top: 43%;    height: 30%; transform: rotate(-6deg); }
 .p-freddy  { left: 4%;  top: 50%;    height: 32%; }
 .p-psyduck { left: 12%; bottom: 1%;  height: 24%; }
 .p-lebron  { left: 30%; top: 2%;     height: 19%; transform: rotate(-5deg); }
 .p-foxy    { right: 28%; top: 1%;    height: 22%; }
 .p-stephen { right: 8%; top: 3%;     height: 40%; }
-.p-buttler { right: 6%; top: 40%;    height: 36%; }
+.p-buttler { right: 6%; top: 44%;    height: 36%; }
 .p-blastoise { right: 14%; bottom: 1%; height: 25%; }
-.p-greg    { left: 33%; bottom: -9%; height: 48%; filter: none; mix-blend-mode: multiply; }
+.p-greg    { left: 33%; bottom: 3%; height: 33%; filter: none; mix-blend-mode: multiply; }
 .p-worm    { right: 32%; bottom: 0;  height: 24%; }
 
 .mural-centro img {
@@ -220,4 +220,4 @@ footer a:hover { text-decoration: underline; }
     padding: 6px 16px;
     border-radius: 999px;
 }
-.p-greninja { left: 36%; bottom: -4%; height: 25%; }
+.p-greninja { left: 37%; bottom: -2%; height: 28%; }
